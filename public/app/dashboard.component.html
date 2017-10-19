@@ -1,0 +1,28 @@
+<div class="mt-5" role="alert" *ngIf="loading">
+    Loading dashboard...
+</div>
+<div class="container" *ngIf="!loading">
+    <div class="ui link cards">
+        <div class="card" *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
+            <div class="image">
+                <img src="/hero2.png">
+            </div>
+            <div class="content">
+                <div class="header">{{hero.name}}</div>
+            </div>
+            <div class="description">
+                    Molly is a personal assistant living in Paris.
+                </div>
+            <div class="extra_content">
+                    <span class="right floated">
+                            Joined in 2013  
+                        </span>
+                        <span>
+                            <i class="user icon"></i>
+                            id: {{hero.id}}
+                        </span>
+            </div>
+
+        </div>
+    </div>
+</div>
