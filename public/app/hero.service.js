@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 require("rxjs/add/operator/toPromise");
-var HeroService = (function () {
+var HeroService = /** @class */ (function () {
     function HeroService(http) {
         this.http = http;
         this.heroesUrl = 'api/v1/heros';
@@ -24,9 +24,6 @@ var HeroService = (function () {
             return response.json();
         })
             .catch(this.handleError);
-    };
-    HeroService.prototype.getHeroesSlowly = function () {
-        return this.getHeroes();
     };
     HeroService.prototype.getHero = function (id) {
         var url = this.heroesUrl + "/" + id;
@@ -47,11 +44,25 @@ var HeroService = (function () {
             .then(function () { return hero; })
             .catch(this.handleError);
     };
+    HeroService.prototype.create = function (name) {
+        return this.http
+            .post(this.heroesUrl, JSON.stringify({ name: name }), { headers: this.headers })
+            .toPromise()
+            .then(function (res) { return res.json(); })
+            .catch(this.handleError);
+    };
+    HeroService.prototype.delete = function (id) {
+        var url = this.heroesUrl + "/" + id;
+        return this.http.delete(url, { headers: this.headers })
+            .toPromise()
+            .then(function () { return null; })
+            .catch(this.handleError);
+    };
+    HeroService = __decorate([
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [http_1.Http])
+    ], HeroService);
     return HeroService;
 }());
-HeroService = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [http_1.Http])
-], HeroService);
 exports.HeroService = HeroService;
 //# sourceMappingURL=hero.service.js.map

@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var router_1 = require("@angular/router");
 var hero_service_1 = require("./hero.service");
 var core_1 = require("@angular/core");
-var DashboardComponent = (function () {
+var DashboardComponent = /** @class */ (function () {
     function DashboardComponent(heroService, router) {
         this.heroService = heroService;
         this.router = router;
@@ -27,15 +27,15 @@ var DashboardComponent = (function () {
     DashboardComponent.prototype.onSelect = function (hero) {
         this.router.navigate(['/heroes', hero.id]);
     };
+    DashboardComponent = __decorate([
+        core_1.Component({
+            selector: 'my-dashboard',
+            templateUrl: './dashboard.component.html'
+        }),
+        __metadata("design:paramtypes", [hero_service_1.HeroService,
+            router_1.Router])
+    ], DashboardComponent);
     return DashboardComponent;
 }());
-DashboardComponent = __decorate([
-    core_1.Component({
-        selector: 'my-dashboard',
-        templateUrl: './dashboard.component.html'
-    }),
-    __metadata("design:paramtypes", [hero_service_1.HeroService,
-        router_1.Router])
-], DashboardComponent);
 exports.DashboardComponent = DashboardComponent;
 //# sourceMappingURL=dashboard.component.js.map

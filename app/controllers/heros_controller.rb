@@ -16,9 +16,8 @@ class HerosController < ApplicationController
   # POST /heros
   def create
     @hero = Hero.new(hero_params)
-
     if @hero.save
-      render json: @hero, status: :created, location: @hero
+      render json: @hero.to_json(only: [:name])      
     else
       render json: @hero.errors, status: :unprocessable_entity
     end

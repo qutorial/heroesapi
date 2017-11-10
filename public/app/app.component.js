@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var router_1 = require("@angular/router");
 var core_1 = require("@angular/core");
-var AppComponent = (function () {
+var AppComponent = /** @class */ (function () {
     function AppComponent(router) {
         var _this = this;
         this.router = router;
@@ -38,14 +38,14 @@ var AppComponent = (function () {
             // this.loading = false
         }
     };
+    AppComponent = __decorate([
+        core_1.Component({
+            template: "\n  <ul class=\"nav nav-tabs\">\n   <li class=\"navbar-brand mt-1\">{{title}}</li>\n   <li class=\"nav-item\"><a class=\"nav-link\" [class.active]=\"this.router.url === '/dashboard'\" routerLink=\"/dashboard\">Dashboard</a></li>\n   <li class=\"nav-item\"><a class=\"nav-link\" [class.active]=\"this.router.url === '/heroes'\" routerLink=\"/heroes\">Heroes</a></li>\n  </ul>\n\n  <div class=\"container mt-6\"></div>\n  \n  \n  <div class=\"mt-5\">\n  \n  <router-outlet></router-outlet>\n  <span *ngIf=\"loading\">Loading page...</span>\n  </div>\n\n  ",
+            selector: 'my-app'
+        }),
+        __metadata("design:paramtypes", [router_1.Router])
+    ], AppComponent);
     return AppComponent;
 }());
-AppComponent = __decorate([
-    core_1.Component({
-        template: "\n  <ul class=\"nav nav-tabs\">\n   <li class=\"navbar-brand mt-1\">{{title}}</li>\n   <li class=\"nav-item\"><a class=\"nav-link\" [class.active]=\"this.router.url === '/dashboard'\" routerLink=\"/dashboard\">Dashboard</a></li>\n   <li class=\"nav-item\"><a class=\"nav-link\" [class.active]=\"this.router.url === '/heroes'\" routerLink=\"/heroes\">Heroes</a></li>\n  </ul>\n\n  <div class=\"container mt-6\"></div>\n  \n  \n  <div class=\"mt-5\">\n  \n  <router-outlet></router-outlet>\n  <span *ngIf=\"loading\">Loading page...</span>\n  </div>\n\n  ",
-        selector: 'my-app'
-    }),
-    __metadata("design:paramtypes", [router_1.Router])
-], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map

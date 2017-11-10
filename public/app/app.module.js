@@ -16,30 +16,30 @@ var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms"); // <-- NgModel lives here
 var app_component_1 = require("./app.component");
 var http_1 = require("@angular/http");
-var AppModule = (function () {
+var AppModule = /** @class */ (function () {
     function AppModule() {
     }
+    AppModule = __decorate([
+        core_1.NgModule({
+            imports: [
+                platform_browser_1.BrowserModule,
+                forms_1.FormsModule,
+                app_routing_module_1.AppRoutingModule,
+                http_1.HttpModule
+            ],
+            declarations: [
+                app_component_1.AppComponent,
+                hero_detail_component_1.HeroDetailComponent,
+                heroes_component_1.HeroesComponent,
+                dashboard_component_1.DashboardComponent,
+            ],
+            bootstrap: [app_component_1.AppComponent],
+            providers: [
+                hero_service_1.HeroService,
+            ]
+        })
+    ], AppModule);
     return AppModule;
 }());
-AppModule = __decorate([
-    core_1.NgModule({
-        imports: [
-            platform_browser_1.BrowserModule,
-            forms_1.FormsModule,
-            app_routing_module_1.AppRoutingModule,
-            http_1.HttpModule
-        ],
-        declarations: [
-            app_component_1.AppComponent,
-            hero_detail_component_1.HeroDetailComponent,
-            heroes_component_1.HeroesComponent,
-            dashboard_component_1.DashboardComponent,
-        ],
-        bootstrap: [app_component_1.AppComponent],
-        providers: [
-            hero_service_1.HeroService,
-        ]
-    })
-], AppModule);
 exports.AppModule = AppModule;
 //# sourceMappingURL=app.module.js.map

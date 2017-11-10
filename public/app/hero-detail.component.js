@@ -15,7 +15,7 @@ var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var common_1 = require("@angular/common");
 require("rxjs/add/operator/switchMap");
-var HeroDetailComponent = (function () {
+var HeroDetailComponent = /** @class */ (function () {
     function HeroDetailComponent(heroService, route, location) {
         this.heroService = heroService;
         this.route = route;
@@ -34,20 +34,20 @@ var HeroDetailComponent = (function () {
         this.heroService.update(this.hero)
             .then(function () { return _this.goBack(); });
     };
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", hero_1.Hero)
+    ], HeroDetailComponent.prototype, "hero", void 0);
+    HeroDetailComponent = __decorate([
+        core_1.Component({
+            selector: "hero-detail",
+            template: "\n  <div *ngIf=\"hero\" class=\"container mt-5\">\n    <h2>{{hero.name}} details!</h2>\n    <form>\n    <div class=\"form-group\">\n        <label>id: </label>{{hero.id}}\n    </div>\n        <div class=\"form-group\">\n            <div *ngIf=\"hero.name=='Windstorm'\" class=\"alert-success alert\">Nice</div>\n            <label for=\"heroName\">name: </label>\n            <input id=\"heroName\" name=\"heroName\" [(ngModel)]=\"hero.name\" placeholder=\"name\" class=\"form-control\">\n        </div>\n        \n    </form>    \n    <button type=\"button\" class=\"btn btn-primary\" (click)=\"save()\">Save</button>\n    <button type=\"button\" class=\"btn\" (click)=\"goBack()\">Back</button>\n  </div>\n  "
+        }),
+        __metadata("design:paramtypes", [hero_service_1.HeroService,
+            router_1.ActivatedRoute,
+            common_1.Location])
+    ], HeroDetailComponent);
     return HeroDetailComponent;
 }());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", hero_1.Hero)
-], HeroDetailComponent.prototype, "hero", void 0);
-HeroDetailComponent = __decorate([
-    core_1.Component({
-        selector: "hero-detail",
-        template: "\n  <div *ngIf=\"hero\" class=\"container mt-5\">\n    <h2>{{hero.name}} details!</h2>\n    <form>\n    <div class=\"form-group\">\n        <label>id: </label>{{hero.id}}\n    </div>\n        <div class=\"form-group\">\n            <div *ngIf=\"hero.name=='Windstorm'\" class=\"alert-success alert\">Nice</div>\n            <label for=\"heroName\">name: </label>\n            <input id=\"heroName\" name=\"heroName\" [(ngModel)]=\"hero.name\" placeholder=\"name\" class=\"form-control\">\n        </div>\n        \n    </form>    \n    <button type=\"button\" class=\"btn btn-primary\" (click)=\"save()\">Save</button>\n    <button type=\"button\" class=\"btn\" (click)=\"goBack()\">Back</button>\n  </div>\n  "
-    }),
-    __metadata("design:paramtypes", [hero_service_1.HeroService,
-        router_1.ActivatedRoute,
-        common_1.Location])
-], HeroDetailComponent);
 exports.HeroDetailComponent = HeroDetailComponent;
 //# sourceMappingURL=hero-detail.component.js.map
